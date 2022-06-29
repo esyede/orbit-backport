@@ -177,7 +177,7 @@ trait Orbital
                 if (array_key_exists('file_path_read_from', $row)
                 && static::getOrbitalPathPattern() !== null) {
                     OrbitMeta::query()->updateOrCreate([
-                        'orbital_type' => ($this),
+                        'orbital_type' => get_class($this),
                         'orbital_key' => $this->getKey(),
                     ], [
                         'file_path_read_from' => $row['file_path_read_from'],
