@@ -1,0 +1,53 @@
+{
+    "name": "esyede/orbit-backport",
+    "description": "A flat-file database driver for Eloquent (Laravel 7 backport).",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Chandler",
+            "email": "support@ryangjchandler.co.uk",
+            "homepage": "https://ryangjchandler.co.uk",
+            "role": "Developer"
+        },
+        {
+            "name": "Suyadi",
+            "email": "suyadi.1992@gmail.com",
+            "homepage": "https://esyede.my.id",
+            "role": "Backporter"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5|^8.0",
+        "ext-json": "*",
+        "illuminate/console": "^5.0",
+        "illuminate/database": "^7.0",
+        "illuminate/events": "^7.0",
+        "illuminate/support": "^7.0",
+        "spatie/yaml-front-matter": "^2.0",
+        "symfony/yaml": "^3.0|^4.0|^5.0|^6.0"
+    },
+    "require-dev": {
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Orbit\\OrbitServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Orbit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Orbit\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
