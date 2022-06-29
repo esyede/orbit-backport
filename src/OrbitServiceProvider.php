@@ -23,7 +23,7 @@ class OrbitServiceProvider extends ServiceProvider
 
         $this->app->singleton(OrbitManager::class, function ($app) {
             $manager = new OrbitManager($app);
-            $drivers = $this->app['config']->get('orbit.drivers');
+            $drivers = config('orbit.drivers');
 
             foreach ($drivers as $key => $driver) {
                 $implements = class_implements($driver);
@@ -35,7 +35,7 @@ class OrbitServiceProvider extends ServiceProvider
                     );
                 }
 
-                $manager->extend($key, function () {
+                $manager->extend($key, function ($app) use ($driver) {
                     return new $driver($app);
                 });
             }

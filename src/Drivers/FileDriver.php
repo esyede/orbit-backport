@@ -84,7 +84,7 @@ abstract class FileDriver implements DriverContract
     protected function getModelAttributes(Model $model)
     {
         return collect($model->getAttributes())
-            ->map(function ($unused, $key) {
+            ->map(function ($unused, $key) use ($model) {
                 return $model->{$key};
             })
             ->toArray();
